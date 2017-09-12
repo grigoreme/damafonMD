@@ -1,0 +1,11 @@
+<div *ngIf="haveImages" class="col-sm-6 col-md-4 col-lg-3 mt-4">
+  <div class="card card-inverse card-info text-center">
+    <img class="card-img-top" [src]="images[0]">
+    <div class="card-footer">
+      <h3 class="card-text">
+        {{name}}
+      </h3>
+      <button class="btn btn-info float-right btn-sm">View Products</button>
+    </div>
+  </div>
+</div>

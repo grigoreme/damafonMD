@@ -1,0 +1,37 @@
+<app-home-slider></app-home-slider>
+<div class="clearTop"></div>
+<div class="container">
+  <h2 class="text-center">Top categories</h2>
+  <div class="clearTop"></div>
+  <div class="container_inner default_template_holder clearfix page_container_inner">
+    <div class="vc_row wpb_row section vc_row-fluid" style="padding-top:0px; text-align:left;">
+      <div class=" full_section_inner clearfix">
+        <div class="vc_col-sm-12 wpb_column vc_column_container">
+          <div class="wpb_wrapper">
+            <div class="projects_holder_outer v3 portfolio_with_space portfolio_standard ">
+              <div class="projects_holder clearfix v3 standard">
+                <app-shop-category *ngFor="let categorie of categories" [category]="categorie"></app-shop-category>
+              </div>
+            </div>
+            <div class="separator  transparent center  " style="margin-top: 20px;margin-bottom: 20px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-sm-6 col-xs-12">
+      <a href="#">
+        <img src="http://placehold.it/585x60" class="img-responsive">
+      </a>
+    </div>
+    <div class="col-lg-6 col-sm-6 col-xs-12">
+      <a href="#">
+        <img src="http://placehold.it/585x60" class="img-responsive">
+      </a>
+    </div>
+  </div>
+</div>
