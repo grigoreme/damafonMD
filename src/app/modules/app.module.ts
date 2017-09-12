@@ -13,6 +13,7 @@ import { CarouselModule } from 'angular4-carousel';
 import { SharedModule } from '../components/shared/shared.module';
 import { NavbarComponent } from '../components/layout/navbar/navbar.component';
 import { FooterComponent } from '../components/layout/footer/footer.component';
+import { HomeOffersComponent } from '../components/home/offers/offers.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FooterComponent } from '../components/layout/footer/footer.component';
     HomeSliderComponent,
     NavbarComponent,
     FooterComponent,
+    HomeOffersComponent,
   ],
   imports: [
     BrowserModule,
