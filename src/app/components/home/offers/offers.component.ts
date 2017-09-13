@@ -25,7 +25,8 @@ export class HomeOffersComponent {
 
   onSubscribe() {
     const email = this.email.nativeElement.value;
-    if(!email) {
+    if (!email || !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      this.notification.error('Couldn\'t subscribe you', 'Email you entered is not valid!');
       return;
     }
     this.firebaseService.list('subscribes').then(data => {
