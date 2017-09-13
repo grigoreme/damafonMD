@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { AlertModule, DatepickerModule, BsDropdownModule } from 'ngx-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { routing } from './app.routing';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from '../components/layout/app/app.component';
 import { Four0FourComponent } from '../components/layout/404/404.component';
@@ -14,6 +16,21 @@ import { SharedModule } from '../components/shared/shared.module';
 import { NavbarComponent } from '../components/layout/navbar/navbar.component';
 import { FooterComponent } from '../components/layout/footer/footer.component';
 import { HomeOffersComponent } from '../components/home/offers/offers.component';
+import { FirebaseService } from '../services/firebase.service';
+
+// firebase
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+export const firebaseConfig = {
+  apiKey: 'AIzaSyDqvy0HnLRkKb75rGqfzzfbwZd1_NrRbhM',
+  authDomain: 'damafonmd.firebaseapp.com',
+  databaseURL: 'https://damafonmd.firebaseio.com',
+  projectId: 'damafonmd',
+  storageBucket: 'damafon',
+  messagingSenderId: '985267096814'
+};
 
 @NgModule({
   declarations: [
@@ -23,7 +40,7 @@ import { HomeOffersComponent } from '../components/home/offers/offers.component'
     HomeSliderComponent,
     NavbarComponent,
     FooterComponent,
-    HomeOffersComponent,
+    HomeOffersComponent
   ],
   imports: [
     BrowserModule,
@@ -34,10 +51,13 @@ import { HomeOffersComponent } from '../components/home/offers/offers.component'
     routing,
     CarouselModule,
     SharedModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    SimpleNotificationsModule.forRoot(),
+    BrowserAnimationsModule,
   ],
-  providers: [
-    ProductService,
-  ],
+  providers: [ProductService, FirebaseService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

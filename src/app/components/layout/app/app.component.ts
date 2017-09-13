@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'interfon.md';
+
+  options = {
+    position: ['bottom', 'right'],
+    timeOut: 5000,
+    lastOnBottom: true
+  };
 }

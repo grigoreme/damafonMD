@@ -6,25 +6,25 @@
       <h4>Watchout timer for discount!</h4>
       <div class="timeContainer">
         <div id="days" class="timeItem">
-          <span class="timeBadge">09</span>
+          <span class="timeBadge">{{days}}</span>
           <span class="timeLabel">days</span>
         </div>
         <div id="days" class="timeItem">
-          <span class="timeBadge">09</span>
-          <span class="timeLabel">HOURS</span>
+          <span class="timeBadge">{{hours}}</span>
+          <span class="timeLabel">hours</span>
         </div>
         <div id="days" class="timeItem">
-          <span class="timeBadge">09</span>
-          <span class="timeLabel">MINS</span>
+          <span class="timeBadge">{{mins}}</span>
+          <span class="timeLabel">mins</span>
         </div>
         <div id="days" class="timeItem">
-          <span class="timeBadge">09</span>
-          <span class="timeLabel">SECS</span>
+          <span class="timeBadge">{{secs}}</span>
+          <span class="timeLabel">secs</span>
         </div>
       </div>
       <h2>Subscribe to News</h2>
-      <form action="#" class="clearTop">
-        <input class="btn btn-lg" name="email" id="email" type="email" placeholder="Your Email" required>
+      <form (submit)="onSubscribe()" class="clearTop">
+        <input class="btn btn-lg" #email name="email" id="email" type="email" placeholder="Your Email" required>
         <button class="btn btn-info btn-lg" type="submit">Submit</button>
       </form>
       <small class="promise"><em>We won't send spam.</em></small>
