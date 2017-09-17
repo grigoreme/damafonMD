@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AlertModule, DatepickerModule, BsDropdownModule } from 'ngx-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './app.routing';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,6 +27,7 @@ import { CategoryItemComponent } from '../components/categories/item/item.compon
 import { CategoryService } from '../services/categories.service';
 import { CategoryExistsGuard } from '../guards/categoryExist.guard';
 import { ItemService } from '../services/items.service';
+import { IonRangeSliderModule } from 'ng2-ion-range-slider';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyDqvy0HnLRkKb75rGqfzzfbwZd1_NrRbhM',
@@ -63,6 +64,8 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     SimpleNotificationsModule.forRoot(),
     BrowserAnimationsModule,
+    ReactiveFormsModule,
+    IonRangeSliderModule,
   ],
   providers: [
     ProductService,
@@ -71,6 +74,6 @@ export const firebaseConfig = {
     CategoryExistsGuard,
     ItemService,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -1,6 +1,35 @@
+<div class="col-lg-2 col-md-3 col-md-offset-0 col-lg-offset-0 clearTop">
+  <div class="well">
+    <h3 align="center">Search Filter</h3>
+    <form class="form-horizontal" [formGroup]="filterForm" novalidate>
+      <div class="form-group">
+        <label for="location1" class="control-label">Location</label>
+        <select class="form-control" formControlName="location">
+          <option value="">Any</option>
+          <option value="">1</option>
+          <option value="">2</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="type1" class="control-label">Type</label>
+        <select formControlName="type" class="form-control" id="type1">
+          <option value="">Any</option>
+          <option value="">1</option>
+          <option value="">2</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="pricefrom" class="control-label">Price $</label>
+        <ion-range-slider #sliderElement type="double" [min]="0" max="1000" from="0" from_min="0" from_max="1000" from_shadow="true"
+          to="1000" to_min="0" to_max="1000" to_shadow="true" grid="false" grid_num="10" postfix="$"></ion-range-slider>
+      </div>
+      <p class="text-center"><a class="btn btn-danger glyphicon glyphicon-search" role="button" (click)="filterApply(filterForm.value, filterForm.valid)"></a></p>
+    </form>
+  </div>
+</div>
 <div class="container">
   <div *ngIf="!haveItems">
-    We have no items in that category.
+    <app-no-data></app-no-data>
   </div>
   <div *ngIf="haveItems">
     <app-category-item *ngFor="let item of items" [item]="item"></app-category-item>
