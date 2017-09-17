@@ -1,3 +1,8 @@
 <div class="container">
-    <app-category-item></app-category-item>
+  <div *ngIf="!haveItems">
+    We have no items in that category.
+  </div>
+  <div *ngIf="haveItems">
+    <app-category-item *ngFor="let item of items" [item]="item"></app-category-item>
+  </div>
 </div>

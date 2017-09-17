@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Category } from '../models/category';
-import { Router, NavigationStart, ActivatedRoute, Data, ParamMap } from '@angular/router';
 
 @Injectable()
 export class CategoryService {
@@ -15,8 +14,8 @@ export class CategoryService {
     return this._activeCategory;
   }
 
-  set activeCategory(category: Category) {
-    this._activeCategory = category;
+  updateActiveCategory(route: string) {
+    this._activeCategory = this._categories[route];
   }
 
   set category(category: Category) {

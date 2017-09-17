@@ -6,8 +6,11 @@ export class Item {
   constructor(
     public Name?: string,
     public Id?: string,
-    public Subcategories?: Category[],
+    public Categories?: string[],
     public Images?: string[],
     public price?: number,
+    public currency?: string,
+    public description?: String,
+    public sale?: number
   ) { }
 }

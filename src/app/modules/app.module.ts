@@ -26,6 +26,7 @@ import { CategoriesComponent } from '../components/categories/categories.compone
 import { CategoryItemComponent } from '../components/categories/item/item.component';
 import { CategoryService } from '../services/categories.service';
 import { CategoryExistsGuard } from '../guards/categoryExist.guard';
+import { ItemService } from '../services/items.service';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyDqvy0HnLRkKb75rGqfzzfbwZd1_NrRbhM',
@@ -68,6 +69,7 @@ export const firebaseConfig = {
     FirebaseService,
     CategoryService,
     CategoryExistsGuard,
+    ItemService,
   ],
   bootstrap: [AppComponent]
 })

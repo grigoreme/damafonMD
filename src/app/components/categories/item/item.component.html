@@ -1,10 +1,10 @@
 <figure class="snip1492">
-  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample85.jpg" alt="sample85" />
+  <img src="{{images[0]}}" alt="sample85" />
   <figcaption>
-    <h3>Pudol Doux</h3>
-    <p>All this modern technology just makes people try to do everything at once.</p>
+    <h3>{{name}}</h3>
+    <p>{{description}}</p>
     <div class="price">
-      <s>$24.00</s>$19.00
+      <s>{{price | currency:currency:true:'1.2-2'}}</s>{{price-sale | currency:currency:true:'1.2-2'}} 
     </div>
   </figcaption><i class="ion-plus-round"></i>
   <a href="#"></a>

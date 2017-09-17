@@ -14,7 +14,9 @@ export class CategoryExistsGuard implements CanActivate {
     if (!canRoute) {
       this.notification.error('Something went wrong', 'You are not authorized to enter here!');
       this.router.navigate(['']);
+      return;
     }
+    this.categoryService.updateActiveCategory(cat);
     return true;
   }
 }
