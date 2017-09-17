@@ -3,7 +3,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 
 @Injectable()
 export class FirebaseService {
-  constructor(private angularFireDatabase: AngularFireDatabase) {}
+  constructor(private angularFireDatabase: AngularFireDatabase) { }
 
   public list(database: string) {
     return new Promise((resolve, reject) => {

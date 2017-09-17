@@ -22,6 +22,10 @@ import { FirebaseService } from '../services/firebase.service';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { CategoriesComponent } from '../components/categories/categories.component';
+import { CategoryItemComponent } from '../components/categories/item/item.component';
+import { CategoryService } from '../services/categories.service';
+import { CategoryExistsGuard } from '../guards/categoryExist.guard';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyDqvy0HnLRkKb75rGqfzzfbwZd1_NrRbhM',
@@ -40,7 +44,9 @@ export const firebaseConfig = {
     HomeSliderComponent,
     NavbarComponent,
     FooterComponent,
-    HomeOffersComponent
+    HomeOffersComponent,
+    CategoriesComponent,
+    CategoryItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +63,12 @@ export const firebaseConfig = {
     SimpleNotificationsModule.forRoot(),
     BrowserAnimationsModule,
   ],
-  providers: [ProductService, FirebaseService],
+  providers: [
+    ProductService,
+    FirebaseService,
+    CategoryService,
+    CategoryExistsGuard,
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
