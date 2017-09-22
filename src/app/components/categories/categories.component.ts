@@ -19,10 +19,10 @@ export class CategoriesComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.items = this.fetchItems();
+    this.fetchItems();
 
     this.itemService.filterUpdate.subscribe(data => {
-      this.items = this.fetchItems();
+       this.fetchItems();
     });
   }
 
@@ -31,7 +31,7 @@ export class CategoriesComponent implements OnInit {
     this.itemService.route = category.Route;
     const items = this.itemService.getItems();
     this.haveItems = !!items.length;
-    return items;
+    this.items = items;
   }
 
 }

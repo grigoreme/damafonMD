@@ -1,12 +1,6 @@
 import { ItemService } from './../../../services/items.service';
 import { Component, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  FormControl,
-  FormBuilder,
-  Validators
-} from '@angular/forms';
-import { Slider } from './slider.model';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-category-filter',
@@ -50,7 +44,7 @@ export class CategoryFilterComponent implements OnInit {
     ];
   }
 
-  updatePrice(value: Slider) {
+  updatePrice(value: any) {
     this.filterForm.controls.price.setValue(
       { from: value.from, to: value.to },
       { eventEmit: true }
@@ -69,6 +63,6 @@ export class CategoryFilterComponent implements OnInit {
         return value >= filterValue['from'] && value <= filterValue['to'];
       }
     };
-    this.itemService.filter = {price};
+    this.itemService.filter = { price };
   }
 }
