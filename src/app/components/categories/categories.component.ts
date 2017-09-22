@@ -2,53 +2,36 @@ import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../../services/categories.service';
 import { ItemService } from '../../services/items.service';
 import { Item } from '../../models/item';
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-categories',
   templateUrl: 'categories.component.html',
-  styleUrls: [
-    './categories.component.scss'
-  ]
+  styleUrls: ['./categories.component.scss']
 })
-
 export class CategoriesComponent implements OnInit {
-  private _items: Item[];
-  private range = 1;
-  public filterForm: FormGroup;
-  public submitted: boolean;
-  public events: any[] = [];
+  private items: Item[];
+  public haveItems = true;
+
   constructor(
     private categoryService: CategoryService,
-    private itemService: ItemService,
-    private _fb: FormBuilder
-  ) {
-    this.fetchItems();
-  }
+    private itemService: ItemService
+  ) {}
 
   ngOnInit() {
-    this.filterForm = new FormGroup({
-      location: new FormControl('', [<any>Validators.required, <any>Validators.minLength(5)]),
-      type: new FormControl('', [<any>Validators.required, <any>Validators.minLength(5)]),
-      price: new FormControl('', []),
+    this.items = this.fetchItems();
+
+    this.itemService.filterUpdate.subscribe(data => {
+      this.items = this.fetchItems();
     });
   }
 
-  filterApply(value: any, valid: boolean) {
-    console.log(value);
-  }
-
-  private fetchItems() {
+  fetchItems() {
     const category = this.categoryService.activeCategory;
-    this._items = this.itemService.getItems(category.Route);
-  }
-
-  get items() {
-    return this._items;
-  }
-
-  get haveItems(): boolean {
-    return !!this._items.length;
+    this.itemService.route = category.Route;
+    const items = this.itemService.getItems();
+    this.haveItems = !!items.length;
+    return items;
   }
 
 }

@@ -1,0 +1,20 @@
+<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 col-md-offset-0 col-lg-offset-0 clearTop">
+  <div class="well">
+    <h3 align="center">Search Filter</h3>
+    <form class="form-horizontal" [formGroup]="filterForm" novalidate>
+      <div class="btn-group" data-toggle="buttons">
+      </div>
+      <div class="form-group">
+        <label for="type1" class="control-label">Color</label>
+        <input type="text" formControlName="color">
+      </div>
+      <div class="form-group">
+        <label for="pricefrom" class="control-label">Price $</label>
+        <ion-range-slider (onChange)="updatePrice($event)" type="double" 
+          min="0" [max]="itemService.maxPrice" 
+          from="0" from_min="0" [from_max]="itemService.maxPrice" from_shadow="true"
+          [to]="itemService.maxPrice" to_min="0" [to_max]="itemService.maxPrice" to_shadow="true" grid="true" grid_num="10" postfix="$"></ion-range-slider>
+      </div>
+    </form>
+  </div>
+</div>
