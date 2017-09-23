@@ -6,7 +6,11 @@
       </div>
       <div class="form-group">
         <label for="type1" class="control-label">Color</label>
-        <input type="text" formControlName="color">
+          <button (click)="updateColor(color.color)" 
+            *ngFor="let color of availableColors" class="filterColor" 
+            [style.backgroundColor]="color.color">
+              <span *ngIf="color.enabled">Y</span>
+          </button>
       </div>
       <div class="form-group">
         <label for="pricefrom" class="control-label">Price $</label>

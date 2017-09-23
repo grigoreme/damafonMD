@@ -41,6 +41,7 @@ export class ItemService {
         9.52
       )
     );
+  this._items[0].color = 'grey';
   }
   set filter(filter) {
     this.filterUpdate.next(filter);
