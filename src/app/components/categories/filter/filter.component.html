@@ -9,7 +9,7 @@
           <button (click)="updateColor(color.color)" 
             *ngFor="let color of availableColors" class="filterColor" 
             [style.backgroundColor]="color.color">
-              <span *ngIf="color.enabled">Y</span>
+              <span *ngIf="color.enabled" class="colorEnabled">Y</span>
           </button>
       </div>
       <div class="form-group">

@@ -9,5 +9,14 @@
   width: 25px;
   height: 25px;
 	display: inline-block;
-	border: 0;
+  border: 0;
+  position: relative;
+}
+
+.colorEnabled {
+  position: absolute;
+  top:0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }

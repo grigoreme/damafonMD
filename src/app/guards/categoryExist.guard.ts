@@ -12,7 +12,7 @@ export class CategoryExistsGuard implements CanActivate {
     const cat = state.url.split('/')[2];
     const canRoute = this.categoryService.haveCategory(cat);
     if (!canRoute) {
-      this.notification.error('Something went wrong', 'You are not authorized to enter here!');
+      this.notification.error('Something went wrong', 'Looks like category you are looking for doesn\'t exist');
       this.router.navigate(['']);
       return;
     }

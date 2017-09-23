@@ -32,6 +32,7 @@ import { FirebaseService } from '../services/firebase.service';
 import { CategoryService } from '../services/categories.service';
 import { CategoryExistsGuard } from '../guards/categoryExist.guard';
 import { ItemService } from '../services/items.service';
+import { ItemExistsGuard } from '../guards/itemExist.guard';
 
 const commonModules = [
   BrowserModule,
@@ -53,7 +54,8 @@ const firebaseModules = [
     AppComponent,
     ...Components.categoryComponents,
     ...Components.homeComponents,
-    ...Components.layoutComponents
+    ...Components.layoutComponents,
+    ...Components.itemsComponents,
   ],
   imports: [
     ...commonModules,
@@ -69,8 +71,9 @@ const firebaseModules = [
     ProductService,
     FirebaseService,
     CategoryService,
+    ItemService,
     CategoryExistsGuard,
-    ItemService
+    ItemExistsGuard,
   ],
   bootstrap: [AppComponent]
 })

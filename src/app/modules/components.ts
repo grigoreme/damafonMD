@@ -1,3 +1,4 @@
+import { ItemsComponent } from './../components/items/items.component';
 import { AppComponent } from '../components/layout/app/app.component';
 import { Four0FourComponent } from '../components/layout/404/404.component';
 import { HomeComponent } from '../components/home/home.component';
@@ -25,5 +26,8 @@ export default {
     CategoriesComponent,
     CategoryItemComponent,
     CategoryFilterComponent
+  ],
+  itemsComponents: [
+    ItemsComponent,
   ],
 };

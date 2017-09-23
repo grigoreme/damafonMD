@@ -36,4 +36,8 @@ export class CategoryItemComponent  {
     get description() {
         return this.item.description;
     }
+
+    get Id() {
+        return this.item.Id;
+    }
 }

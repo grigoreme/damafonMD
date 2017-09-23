@@ -9,6 +9,7 @@ export class ItemService {
   private _filter = {};
   private _route;
   private _maxPrice = 1;
+  private _activeItem: Item;
   public filterUpdate: EventEmitter<any> = new EventEmitter();
   public routeUpdate: EventEmitter<any> = new EventEmitter();
 
@@ -53,6 +54,18 @@ export class ItemService {
 
   get maxPrice() {
     return this._maxPrice;
+  }
+
+  haveItem(id: string): boolean {
+    return !!this._items.filter(item => item.Id === id).length;
+  }
+
+  getActiveItem(): Item {
+    return this._activeItem;
+  }
+
+  set activeItem(id: string) {
+    this._activeItem = this._items.filter(item => item.Id === id)[0];
   }
 
   private updateItems() {
