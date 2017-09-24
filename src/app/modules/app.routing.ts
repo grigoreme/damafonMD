@@ -7,6 +7,7 @@ import { HomeComponent } from '../components/home/home.component';
 import { CategoriesComponent } from '../components/categories/categories.component';
 import { CategoryExistsGuard } from '../guards/categoryExist.guard';
 import { ItemExistsGuard } from '../guards/itemExist.guard';
+import { SubCategoryExistsGuard } from '../guards/subcategoryExist.guard';
 
 const routes: Routes = <Routes>[
   {
@@ -19,6 +20,12 @@ const routes: Routes = <Routes>[
     component: CategoriesComponent,
     pathMatch: 'full',
     canActivate: [CategoryExistsGuard]
+  },
+  {
+    path: 'subcat/:cat/:subcat',
+    component: CategoriesComponent,
+    pathMatch: 'full',
+    canActivate: [SubCategoryExistsGuard],
   },
   {
     path: 'items/:item',

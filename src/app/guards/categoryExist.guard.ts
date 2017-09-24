@@ -1,3 +1,4 @@
+import { ItemService } from './../services/items.service';
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { CategoryService } from '../services/categories.service';
@@ -6,7 +7,12 @@ import { NotificationsService } from 'angular2-notifications';
 @Injectable()
 export class CategoryExistsGuard implements CanActivate {
 
-  constructor(private categoryService: CategoryService, private router: Router, private notification: NotificationsService) { }
+  constructor(
+    private itemService: ItemService,
+    private categoryService: CategoryService,
+    private router: Router,
+    private notification: NotificationsService
+  ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     const cat = state.url.split('/')[2];
@@ -17,6 +23,7 @@ export class CategoryExistsGuard implements CanActivate {
       return;
     }
     this.categoryService.updateActiveCategory(cat);
+    this.itemService.route = this.categoryService.getCategory(cat).Route;
     return true;
   }
 }

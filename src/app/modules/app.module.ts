@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { AppComponent } from '../components/layout/app/app.component';
-
 import Components from './components';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -33,6 +32,7 @@ import { CategoryService } from '../services/categories.service';
 import { CategoryExistsGuard } from '../guards/categoryExist.guard';
 import { ItemService } from '../services/items.service';
 import { ItemExistsGuard } from '../guards/itemExist.guard';
+import { SubCategoryExistsGuard } from '../guards/subcategoryExist.guard';
 
 const commonModules = [
   BrowserModule,
@@ -65,7 +65,7 @@ const firebaseModules = [
     BsDropdownModule.forRoot(),
     CarouselModule,
     SimpleNotificationsModule.forRoot(),
-    IonRangeSliderModule
+    IonRangeSliderModule,
   ],
   providers: [
     ProductService,
@@ -74,6 +74,7 @@ const firebaseModules = [
     ItemService,
     CategoryExistsGuard,
     ItemExistsGuard,
+    SubCategoryExistsGuard,
   ],
   bootstrap: [AppComponent]
 })

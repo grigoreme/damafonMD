@@ -1,0 +1,14 @@
+<ul class="nav navbar-nav">
+  <li class="dropdown" dropdown>
+    <a dropdownToggle href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+    {{name}} <b class="caret"></b>
+  </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a *ngFor="let subcat of subcategories" 
+          [routerLink]="['/subcat', route, subcat.Route]">{{subcat.Name}}
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>

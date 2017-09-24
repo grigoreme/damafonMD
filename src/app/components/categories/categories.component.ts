@@ -3,7 +3,6 @@ import { CategoryService } from '../../services/categories.service';
 import { ItemService } from '../../services/items.service';
 import { Item } from '../../models/item';
 
-
 @Component({
   selector: 'app-categories',
   templateUrl: 'categories.component.html',
@@ -22,16 +21,16 @@ export class CategoriesComponent implements OnInit {
     this.fetchItems();
 
     this.itemService.filterUpdate.subscribe(data => {
-       this.fetchItems();
+      this.fetchItems();
+    });
+    this.itemService.routeUpdate.subscribe(data => {
+      this.fetchItems();
     });
   }
 
   fetchItems() {
-    const category = this.categoryService.activeCategory;
-    this.itemService.route = category.Route;
     const items = this.itemService.getItems();
     this.haveItems = !!items.length;
     this.items = items;
   }
-
 }

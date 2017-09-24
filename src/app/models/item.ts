@@ -11,6 +11,9 @@ export class Item {
     public price?: number,
     public currency?: string,
     public description?: String,
-    public sale?: number
-  ) { }
+    public sale?: number,
+    public abstracts?: object
+  ) {
+    Object.assign(this, abstracts);
+  }
 }

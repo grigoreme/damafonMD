@@ -34,15 +34,30 @@ export class ItemService {
       new Item(
         'Cofta',
         '1',
-        ['first', 'third'],
+        ['ser', 'contact'],
         ['../../../assets/images/items/01.jpg'],
         50,
         'USD',
         'Very usual and very low cost!',
-        9.52
-      )
+        9.52,
+        {
+          color: 'grey',
+        }
+      ),
+      new Item(
+        'Cofta',
+        '1_2',
+        ['acm', 'acmc'],
+        ['../../../assets/images/items/01.jpg'],
+        50,
+        'USD',
+        'Very usual and very low cost!',
+        9.52,
+        {
+          color: 'grey',
+        }
+      ),
     );
-  this._items[0].color = 'grey';
   }
   set filter(filter) {
     this.filterUpdate.next(filter);
@@ -92,6 +107,7 @@ export class ItemService {
       if (item.price > maxPrice) {
         maxPrice = item.price;
       }
+      
       return item.Categories.indexOf(this._route) !== -1;
     };
 

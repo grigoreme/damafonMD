@@ -9,13 +9,15 @@ import { NavbarComponent } from '../components/layout/navbar/navbar.component';
 import { CategoriesComponent } from '../components/categories/categories.component';
 import { CategoryItemComponent } from '../components/categories/item/item.component';
 import { CategoryFilterComponent } from '../components/categories/filter/filter.component';
+import { NavbarDropdownComponent } from '../components/layout/navbar/dropdown/dropdown.component';
 
 export default {
   layoutComponents: [
     AppComponent,
     Four0FourComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    NavbarDropdownComponent,
   ],
   homeComponents: [
     HomeOffersComponent,
@@ -25,7 +27,7 @@ export default {
   categoryComponents: [
     CategoriesComponent,
     CategoryItemComponent,
-    CategoryFilterComponent
+    CategoryFilterComponent,
   ],
   itemsComponents: [
     ItemsComponent,
