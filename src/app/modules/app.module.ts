@@ -18,12 +18,12 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDqvy0HnLRkKb75rGqfzzfbwZd1_NrRbhM',
-  authDomain: 'damafonmd.firebaseapp.com',
-  databaseURL: 'https://damafonmd.firebaseio.com',
-  projectId: 'damafonmd',
-  storageBucket: 'damafon',
-  messagingSenderId: '985267096814'
+  apiKey: '',
+  authDomain: '',
+  databaseURL: '',
+  projectId: '',
+  storageBucket: '',
+  messagingSenderId: ''
 };
 
 import { ProductService } from '../services/products.service';
